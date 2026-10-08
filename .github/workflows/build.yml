@@ -1,0 +1,69 @@
+name: 블로그 초안 생성·배포
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "requests/**/request.json"   # 업로드 화면에서 요청 등록
+      - "blogmaker/**"
+      - "content/**"
+      - ".github/workflows/build.yml"
+  workflow_dispatch:                 # Actions 화면에서 수동 실행
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: build-and-deploy
+  cancel-in-progress: false          # 요청이 연달아 와도 순서대로 처리
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 패키지 설치
+        run: pip install -r requirements.txt
+
+      - name: 대기 중인 요청 처리
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # 없으면 규칙 기반으로 작성
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}                # 비우면 claude-sonnet-5-5
+        run: python -m blogmaker process
+
+      - name: 결과 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A content requests
+          if ! git diff --cached --quiet; then
+            git commit -m "posts: 요청 처리 $(date -u +%Y-%m-%dT%H:%MZ)"
+            for i in 1 2 3; do git pull --rebase && git push && break || sleep 5; done
+          fi
+
+      - name: 사이트 생성
+        run: python -m blogmaker site --out _site
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>새 글 만들기 · {{ site_title }}</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="topnav"><a href="index.html">← 목록</a><span></span></nav>
+
+  <div class="box">
+    <div class="box-head"><b>새 글 만들기</b><span>링크와 상세 이미지 zip을 올리면 자동으로 초안이 만들어집니다</span></div>
+    <div class="box-body">
+      <form class="form" id="f">
+        <div class="field">
+          <label for="url">예매 링크</label>
+          <input type="url" id="url" required placeholder="https://nol.yanolja.com/ticket/products/26014046">
+          <small>놀티켓 링크 권장. 인터파크 티켓 링크는 같은 상품번호의 놀티켓 페이지로 바꿔 수집합니다.</small>
+        </div>
+        <div class="field">
+          <label for="zip">상세 이미지 zip</label>
+          <input type="file" id="zip" accept=".zip,image/*" required>
+          <small>상세 이미지를 원본 크기로 저장해 zip으로 압축해 주세요. 여러 장이면 파일명 순서대로 이어 붙입니다.</small>
+        </div>
+
+        <details id="settings">
+          <summary>GitHub 연결 설정 {% raw %}<span id="tokstate"></span>{% endraw %}</summary>
+          <div class="form" style="margin-top:12px">
+            <div class="row2">
+              <div class="field"><label for="owner">계정</label><input type="text" id="owner" value="{{ owner }}"></div>
+              <div class="field"><label for="repo">저장소</label><input type="text" id="repo" value="{{ repo }}"></div>
+            </div>
+            <div class="field">
+              <label for="token">GitHub 토큰</label>
+              <input type="password" id="token" placeholder="github_pat_..." autocomplete="off">
+              <small>Fine-grained 토큰을 이 저장소에만 권한을 주어 만드세요: <b>Contents: Read and write</b>, <b>Actions: Read-only</b>.
+              토큰은 이 브라우저에만 저장되며 GitHub API 외에는 보내지 않습니다. 공용 PC에서는 사용 후 아래 버튼으로 지우세요.</small>
+              <button type="button" class="dl-btn" id="forget" style="margin-top:8px;padding:5px 12px;">저장된 토큰 지우기</button>
+            </div>
+          </div>
+        </details>
+
+        <button class="copy" id="go" type="submit" style="padding:11px;font-size:15px;">초안 만들기</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="box" id="statusbox" hidden>
+    <div class="box-head"><b>진행 상황</b><a id="runlink" class="muted" target="_blank" rel="noopener" hidden>Actions 보기 ↗</a></div>
+    <div class="box-body status" id="status"></div>
+  </div>
+</div>
+<script src="assets/upload.js"></script>
+</body>
+</html>

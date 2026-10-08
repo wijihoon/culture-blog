@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site_title }}</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap wide">
+  <div class="hero-head">
+    <div>
+      <h1>{{ site_title }}</h1>
+      <p>예매 링크와 상세 이미지 zip으로 만든 네이버 블로그 초안 {{ posts|length }}편</p>
+    </div>
+    <a class="copy" href="upload.html">+ 새 글 만들기</a>
+  </div>
+
+  {% if posts %}
+  <div class="cards">
+    {% for p in posts %}
+    <a class="card" href="posts/{{ p.id }}/index.html">
+      {% if p.thumb %}<img src="posts/{{ p.id }}/{{ p.thumb }}" alt="" loading="lazy">{% else %}<div class="ph">{{ p.genre or '공연' }}</div>{% endif %}
+      <div class="c-body">
+        <h2>{{ p.title }}</h2>
+        <div class="meta">{{ p.venue }}{% if p.period %}<br>{{ p.period }}{% endif %}</div>
+        <div class="meta"><span class="badge {{ 'rules' if p.mode == 'rules' else '' }}">{{ {'claude': 'Claude', 'rules': '규칙', 'manual': '직접 작성'}[p.mode] }}</span>{{ p.created_at[:10] }}</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty">아직 만든 글이 없습니다. <a href="upload.html">첫 글 만들기 →</a></div>
+  {% endif %}
+
+  {% if failed %}
+  <div class="failed box"><div class="box-head"><b>처리 실패한 요청</b></div><div class="box-body"><ul>
+    {% for f in failed %}<li>{{ f.id }} — {{ f.error }}</li>{% endfor %}
+  </ul></div></div>
+  {% endif %}
+</div>
+</body>
+</html>

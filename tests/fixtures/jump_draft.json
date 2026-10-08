@@ -1,0 +1,80 @@
+{
+ "blog_title": "■[1212공연정보]넌버벌 퍼포먼스<점프>울산_코믹 마샬아츠_가족공연_36개월이상_울산문화예술회관 대공연장",
+ "keywords": ["대사 한마디 없이~", "무술", "그리고 아크로바틱", "그리고 슬랩스틱 코미디!"],
+ "hero_image_id": "C03",
+ "intro": [
+  {"text": "넌버벌 퍼포먼스<점프>는", "style": "accent"},
+  {"text": "무술 고수 가족의 집에 도둑이 들면서", "style": "bold"},
+  {"text": "벌어지는 에피소드를 화려한 액션으로 풀어낸", "style": "normal"},
+  {"text": "코믹 마샬아츠 퍼포먼스.", "style": "normal"},
+  {"text": "2003년 국내 무대에 오른 뒤", "style": "normal"},
+  {"text": "영국 런던 웨스트엔드 공연에 뉴욕 상설공연,", "style": "normal"},
+  {"text": "에든버러 프린지 페스티벌 전석 매진,", "style": "normal"},
+  {"text": "국내 최초 중국 33개 도시 내셔널투어까지!", "style": "normal"},
+  {"text": "전 세계 50개국 152여 개 도시에서", "style": "accent"},
+  {"text": "1,300만 명 넘는 관객을 만난 극.", "style": "accent"}
+ ],
+ "intro_note": "(공연 이력·관객 수는 제작사 소개 기준)",
+ "intro_image_id": "C04",
+ "recommend": [
+  {"lines": [
+    {"text": "말이 하나도 없으니까", "style": "normal"},
+    {"text": "아이도 어른도, 외국인 친구도", "style": "normal"},
+    {"text": "다 같이 웃을 수 있는 공연~", "style": "normal"},
+    {"text": "자막도 통역도 필요 없음!", "style": "accent"}], "image_ids": ["C06"]},
+  {"lines": [
+    {"text": "러닝타임 80분이라", "style": "normal"},
+    {"text": "아이들이 지루해할 틈도 없을 길이.", "style": "normal"},
+    {"text": "36개월부터 입장 가능!", "style": "accent"}], "image_ids": []},
+  {"lines": [
+    {"text": "울산에선 딱 이틀, 세 번 공연.", "style": "normal"},
+    {"text": "12월 주말 가족 나들이 찾고 있다면", "style": "normal"},
+    {"text": "이번 기회에 꼭 보기를.", "style": "normal"}], "image_ids": []}
+ ],
+ "reviews": [
+  {"text": "가족, 친구 모두 데려가라", "source": "The British Theatre Guide"},
+  {"text": "화려한 아크로바틱에 코믹 연기까지", "source": "The Times"},
+  {"text": "코믹 타이밍까지 한 치의 실수도 없다", "source": "The Scotsman"}
+ ],
+ "highlights": {
+  "section_title": "에피소드 미리보기",
+  "lead": "무술 가족에게 무슨 일이?",
+  "items": [
+   {"subtitle": "1.무술 가족 집에 찾아온 손님", "title": "특별한 손님의 정체는?", "image_ids": ["C07", "C08"]},
+   {"subtitle": "2.온 가족이 모여 실력 겨루기", "title": "무술 가족의 수련 시간!", "image_ids": ["C09", "C10", "C11"]},
+   {"subtitle": "3.풋풋한 사랑과 부부의 사랑", "title": "사랑? 다른 결말!", "image_ids": ["C12", "C13", "C14"]},
+   {"subtitle": "4.무술 가족 집에 잘못 찾아든 도둑들", "title": "여기가 어디라고! 딱 걸렸다.", "image_ids": ["C15", "C16", "C17"]}
+  ]
+ },
+ "tips": [
+  {"text": "36개월 미만은 입장 불가,", "style": "normal"},
+  {"text": "아이도 1인 1티켓 필수!", "style": "bold"},
+  {"text": "티켓 수령은 공연 1시간 30분 전부터,", "style": "normal"},
+  {"text": "입장은 30분 전부터.", "style": "normal"},
+  {"text": "주차 공간이 좁다니까", "style": "normal"},
+  {"text": "웬만하면 대중교통으로~", "style": "normal"},
+  {"text": "2층 1~3열은 시야 방해가 있을 수 있으니", "style": "accent"},
+  {"text": "예매할 때 참고!", "style": "accent"}
+ ],
+ "venue_search": "울산문화예술회관",
+ "map_image_id": "C19",
+ "closing": ["온 가족이 같이 웃고 싶다면...", "점프!"],
+ "tags": ["#점프", "#넌버벌퍼포먼스점프", "#점프울산", "#코믹마샬아츠", "#울산문화예술회관", "#울산공연", "#울산가족공연", "#가족공연추천", "#아이랑공연", "#넌버벌퍼포먼스", "#12월공연", "#점프공연정보"],
+ "image_labels": [
+  {"id": "C03", "label": "대표 비주얼 (로고·출연진·일정)"},
+  {"id": "C04", "label": "무대 단체 사진"},
+  {"id": "C06", "label": "점프 장면"},
+  {"id": "C07", "label": "에피소드1 인물 컷"},
+  {"id": "C08", "label": "에피소드1 인물 컷"},
+  {"id": "C09", "label": "무술 자세 장면"},
+  {"id": "C10", "label": "에피소드2 인물 컷"},
+  {"id": "C11", "label": "에피소드2 인물 컷"},
+  {"id": "C12", "label": "들어올리기 장면"},
+  {"id": "C13", "label": "에피소드3 인물 컷"},
+  {"id": "C14", "label": "에피소드3 인물 컷"},
+  {"id": "C15", "label": "도둑과 대결 장면"},
+  {"id": "C16", "label": "에피소드4 인물 컷"},
+  {"id": "C17", "label": "에피소드4 인물 컷"},
+  {"id": "C19", "label": "오시는 길 약도"}
+ ]
+}
